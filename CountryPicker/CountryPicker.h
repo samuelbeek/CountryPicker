@@ -1,15 +1,11 @@
 //
 //  CountryPicker.h
+//  by Samuel Beek (samuelbeek.com) 19-12-2014
 //
-//  Version 1.2.3
+//  Version 1.0.0
 //
-//  Created by Nick Lockwood on 25/04/2011.
-//  Copyright 2011 Charcoal Design
-//
-//  Distributed under the permissive zlib License
-//  Get the latest version from here:
-//
-//  https://github.com/nicklockwood/CountryPicker
+//  Based on the Country Picker created by Nick Lockwood on 25/04/2011 (Copyright 2011 Charcoal
+//  Design) source: https://github.com/nicklockwood/CountryPicker license: zlib
 //
 //  This software is provided 'as-is', without any express or implied
 //  warranty. In no event will the authors be held liable for any damages
@@ -53,7 +49,8 @@
 
 @protocol CountryPickerDelegate <UIPickerViewDelegate>
 
-- (void)countryPicker:(CountryPicker *)picker didSelectCountryWithName:(NSString *)name code:(NSString *)code;
+//- (void)countryPicker:(CountryPicker *)picker didSelectCountryWithName:(NSString *)name code:(NSString *)code;
+- (void)countryPicker:(CountryPicker *)picker didSelectCountryWithName:(NSString *)name dialCode:(NSString *)dialCode;
 
 @end
 
@@ -69,6 +66,7 @@
 
 @property (nonatomic, copy) NSString *selectedCountryName;
 @property (nonatomic, copy) NSString *selectedCountryCode;
+@property (nonatomic, copy) NSString *selectedCountryDialCode;
 @property (nonatomic, copy) NSLocale *selectedLocale;
 
 - (void)setSelectedCountryCode:(NSString *)countryCode animated:(BOOL)animated;
